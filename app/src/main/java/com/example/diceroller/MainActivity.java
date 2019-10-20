@@ -54,6 +54,7 @@ public class MainActivity extends AppCompatActivity {
 
         return super.onOptionsItemSelected(item);
     }
+    int score = 0;
 
     public void on_button_click(View view)
     {
@@ -61,22 +62,31 @@ public class MainActivity extends AppCompatActivity {
         TextView tv = this.findViewById(R.id.numbertextView);
         TextView tv2 = this.findViewById(R.id.inputNumberValue);
         TextView tv3 = this.findViewById(R.id.correcttextView);
+        TextView tv4 = this.findViewById(R.id.scoretextView);
 
         Random r = new Random();
         int number = r.nextInt(6);
-
         tv.setText(Integer.toString(number));
-
         int foundval = Integer.parseInt(tv2.getText().toString());
 
-        if (foundval==number)
+
+        if (foundval >0 || foundval <7)
         {
-            tv3.setText("Congratulations!");
+
+            if (foundval==number)
+            {
+                tv3.setText("Congratulations!");
+                score = score+1;
+            }
+            else
+            {
+                tv3.setText("Incorrect!");
+            }
         }
-        else
-        {
-            tv3.setText("Your guess is incorrect");
+        else {
         }
+
+        tv4.setText(String.valueOf(score));
 
     }
 
