@@ -1,5 +1,6 @@
 package com.example.diceroller;
 
+import android.app.Notification;
 import android.os.Bundle;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.google.android.material.snackbar.Snackbar;
@@ -8,6 +9,7 @@ import androidx.appcompat.widget.Toolbar;
 import android.view.View;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.widget.EditText;
 import android.widget.TextView;
 
 import java.util.Random;
@@ -57,11 +59,24 @@ public class MainActivity extends AppCompatActivity {
     {
 
         TextView tv = this.findViewById(R.id.numbertextView);
+        TextView tv2 = this.findViewById(R.id.inputNumberValue);
+        TextView tv3 = this.findViewById(R.id.correcttextView);
 
         Random r = new Random();
         int number = r.nextInt(6);
 
         tv.setText(Integer.toString(number));
+
+        int foundval = Integer.parseInt(tv2.getText().toString());
+
+        if (foundval==number)
+        {
+            tv3.setText("Congratulations!");
+        }
+        else
+        {
+            tv3.setText("Your guess is incorrect");
+        }
 
     }
 
