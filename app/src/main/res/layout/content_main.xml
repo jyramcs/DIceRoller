@@ -25,12 +25,26 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:onClick="on_button_click"
-        android:text="Roll the dice!"
+        android:text="I am feeling lucky"
         android:textSize="24sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/numbertextView" />
+        app:layout_constraintTop_toBottomOf="@+id/numbertextView"
+        app:layout_constraintVertical_bias="0.312" />
+
+    <Button
+        android:id="@+id/button2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:onClick="d_icebreaker"
+        android:text="D-ICEBREAKERS"
+        android:textSize="24sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/numbertextView"
+        app:layout_constraintVertical_bias="0.627" />
 
     <EditText
         android:id="@+id/inputNumberValue"
